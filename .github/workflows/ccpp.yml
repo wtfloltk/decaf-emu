@@ -5,7 +5,7 @@ on: [push, pull_request]
 jobs:
   nx-build:
     runs-on: ubuntu-latest
-    container: devkitpro/devkitarm64:latest
+    container: devkitpro/devkita64:latest
 
     steps:
     - name: checkout
