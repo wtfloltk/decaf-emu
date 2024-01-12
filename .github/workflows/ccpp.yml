@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: checkout
       run: |
-        wget -qO - http://packages.lunarg.com/lunarg-signing-key-pub.asc | sudo apt-key add -
+        wget -qO - http://packages.lunarg.com/lunarg-signing-key-pub.asc | sudo apt-get add-key -
         sudo wget -qO /etc/apt/sources.list.d/lunarg-vulkan-focal.list http://packages.lunarg.com/vulkan/lunarg-vulkan-focal.list
         sudo apt-get add-repository ppa:cginternals/ppa
         sudo apt-get update
@@ -18,7 +18,7 @@ jobs:
         pip3 install wheel
         pip3 install aqtinstall
         pyhton3 -m aqtinstall 
-        curl -sSfLO https://github.com/NixOS/patchelf/releases/download/${PELFVER}/patchelf-${PELFVER}.tar.bz2
+        curl -sSfLO https://github.com/NixOS/patchelf/releases/download/0.12/patchelf-0.12.tar.bz2
         tar xvf patchelf-0.12.tar.bz2
         cd patchelf-0.12/
          ./configure
